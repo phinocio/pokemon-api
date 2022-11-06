@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('generations', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
             $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
-            $table->timestamps();
+            $table->unsignedInteger('new_pokemon');
+            $table->unsignedInteger('total_pokemon');
+            $table->unsignedInteger('new_moves');
+            $table->unsignedInteger('total_moves');
+            $table->unsignedInteger('new_abilities')->default(0);
+            $table->unsignedInteger('total_abilities')->default(0);
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('generations');
     }
 };

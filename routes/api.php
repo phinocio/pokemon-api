@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\GenerationController;
+use App\Http\Controllers\PlatformController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/generations', [GenerationController::class, 'index']);
+Route::get('/generations/{id}', [GenerationController::class, 'show']);
+
+Route::get('/games', [GameController::class, 'index']);
+
+Route::get('/platforms', [PlatformController::class, 'index']);
