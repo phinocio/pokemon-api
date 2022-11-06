@@ -15,8 +15,8 @@ class GenerationController extends Controller
 //		return response()->json(Generation::with(['games.releases'])->get());
     }
 
-	public function show(Generation $id)
+	public function show(Generation $generation)
 	{
-		return new GenerationResource(Generation::with(['games.releases', 'games.platforms'])->find($id)->first());
+		return new GenerationResource($generation);
 	}
 }

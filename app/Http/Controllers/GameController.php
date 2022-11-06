@@ -19,4 +19,12 @@ class GameController extends Controller
 //		return response()->json(Platform::with(['games.releases'])->get());
 
 	}
+
+	public function show(Game $game)
+	{
+		return GameResource::collection($game);
+
+//		return response()->json(Platform::with(['games.releases'])->get());
+
+	}
 }

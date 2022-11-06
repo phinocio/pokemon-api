@@ -22,8 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/generations', [GenerationController::class, 'index']);
-Route::get('/generations/{id}', [GenerationController::class, 'show']);
+Route::get('/generations/{generation}', [GenerationController::class, 'show']);
 
 Route::get('/games', [GameController::class, 'index']);
+Route::get('/games/{game}', [GameController::class, 'show']);
 
 Route::get('/platforms', [PlatformController::class, 'index']);
+Route::get('/platforms/{platform}', [PlatformController::class, 'show']);

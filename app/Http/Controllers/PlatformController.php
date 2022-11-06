@@ -12,7 +12,12 @@ class PlatformController extends Controller
 
     public function index()
     {
-		return PlatformResource::collection(Platform::with(['games'])->get());
+		return PlatformResource::collection(Platform::all());
     }
+
+	public function show(Platform $platform)
+	{
+		return new PlatformResource($platform);
+	}
 
 }

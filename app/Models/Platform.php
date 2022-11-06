@@ -9,6 +9,8 @@ class Platform extends Model
 {
     use HasFactory;
 
+	protected $with = ['games'];
+
 	public function releases() {
 		return $this->belongsToMany(Release::class);
 	}
