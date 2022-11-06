@@ -15,16 +15,11 @@ class GameController extends Controller
 	public function index()
 	{
 		return GameResource::collection(Game::with(['releases', 'platforms'])->get());
-
-//		return response()->json(Platform::with(['games.releases'])->get());
-
 	}
 
 	public function show(Game $game)
 	{
-		return GameResource::collection($game);
-
-//		return response()->json(Platform::with(['games.releases'])->get());
+		return new GameResource($game);
 
 	}
 }

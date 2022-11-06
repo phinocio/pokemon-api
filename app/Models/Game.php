@@ -9,8 +9,6 @@ class Game extends Model
 {
     use HasFactory;
 
-	protected $with = ['releases', 'platforms'];
-
     public function generation() {
         return $this->belongsTo(Generation::class);
     }
@@ -21,5 +19,9 @@ class Game extends Model
 
 	public function platforms() {
 		return $this->belongsToMany(Platform::class);
+	}
+
+	public function pokemon() {
+		return $this->belongsToMany(Pokemon::class);
 	}
 }

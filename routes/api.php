@@ -3,6 +3,7 @@
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenerationController;
 use App\Http\Controllers\PlatformController;
+use App\Http\Controllers\PokemonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,10 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('/generations', [GenerationController::class, 'index']);
 Route::get('/generations/{generation}', [GenerationController::class, 'show']);
 
@@ -29,3 +26,5 @@ Route::get('/games/{game}', [GameController::class, 'show']);
 
 Route::get('/platforms', [PlatformController::class, 'index']);
 Route::get('/platforms/{platform}', [PlatformController::class, 'show']);
+
+Route::get('/pokemon', [PokemonController::class, 'index']);
