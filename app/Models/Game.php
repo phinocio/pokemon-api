@@ -22,8 +22,4 @@ class Game extends Model
 	public function platforms() {
 		return $this->belongsToMany(Platform::class);
 	}
-
-	public function countries() {
-		$this->hasMany(Country::class);
-	}
 }

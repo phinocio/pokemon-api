@@ -12,8 +12,4 @@ class Country extends Model
 	public function releases() {
 		return $this->hasMany(Release::class);
 	}
-
-	public function games() {
-		return $this->hasManyThrough(Game::class, Release::class, 'country_id', 'id');
-	}
 }
