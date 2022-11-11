@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Http\Resources\PlatformResource;
+use App\Models\EvolutionMethod;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,7 +36,9 @@ class DatabaseSeeder extends Seeder
 			LocationSeeder::class,
 			GameLocationSeeder::class,
 			EncounterTypeSeeder::class,
-			EncounterSeeder::class
+			EncounterSeeder::class,
+			EvolutionMethodSeeder::class,
+			EvolutionSeeder::class
         ]);
     }
 }
