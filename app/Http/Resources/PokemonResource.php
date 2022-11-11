@@ -19,7 +19,11 @@ class PokemonResource extends JsonResource
 			'national_dex' => $this->natdex_num,
 			'name' => $this->name,
 			'games' => GameResource::collection($this->whenLoaded('games')),
-			'encounters' => EncounterResource::collection($this->whenLoaded('encounters'))
+			'encounters' => EncounterResource::collection($this->whenLoaded('encounters')),
+			'evolutions' => EvolutionResource::collection($this->whenLoaded('evolutions')),
+			'links' => [
+				'self' => config('app.url') . "/pokemon/$this->id",
+			]
 		];
     }
 }

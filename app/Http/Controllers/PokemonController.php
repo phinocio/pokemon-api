@@ -10,7 +10,7 @@ class PokemonController extends Controller
 {
     public function index()
     {
-        return PokemonResource::collection(Pokemon::with(['evolutions','games'])->get());
+        return PokemonResource::collection(Pokemon::with(['evolutions','games.encounters'])->get());
     }
 
 	public function show(Pokemon $pokemon)

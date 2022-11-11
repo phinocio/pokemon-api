@@ -14,7 +14,7 @@ class Evolution extends Model
 	}
 
 	public function evolved_pokemon() {
-		return $this->belongsTo(Pokemon::class, 'evolution_pokemon_id');
+		return $this->belongsTo(Pokemon::class, 'evolved_pokemon_id');
 	}
 
 	public function evolution_method() {

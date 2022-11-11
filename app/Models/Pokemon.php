@@ -13,9 +13,7 @@ class Pokemon extends Model
 		return $this->belongsToMany(Game::class);
 	}
 
-	public function encounters() {
-		return $this->hasMany(Encounter::class);
-	}
+
 
 	public function evolutions() {
 		return $this->hasMany(Evolution::class);
