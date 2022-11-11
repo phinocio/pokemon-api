@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('game_pokemon', function (Blueprint $table) {
-			$table->id();
-            $table->unsignedBigInteger('game_id');
-			$table->unsignedBigInteger('pokemon_id');
-
-			$table->foreign('game_id')->references('id')->on('games');
-			$table->foreign('pokemon_id')->references('id')->on('pokemon');
+        Schema::create('encounter_types', function (Blueprint $table) {
+            $table->id();
+            $table->text('name');
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('game_pokemon');
+        Schema::dropIfExists('encounter_types');
     }
 };

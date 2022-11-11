@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pokemon extends Model
+class Region extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,7 @@ class Pokemon extends Model
 		return $this->belongsToMany(Game::class);
 	}
 
-	public function encounters() {
-		return $this->hasMany(Encounter::class);
+	public function locations() {
+		return $this->hasMany(Location::class);
 	}
 }

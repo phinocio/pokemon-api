@@ -14,11 +14,12 @@ class GameController extends Controller
 {
 	public function index()
 	{
-		return GameResource::collection(Game::with(['releases', 'platforms'])->get());
+		return GameResource::collection(Game::with(['regions.locations'])->get());
 	}
 
 	public function show(Game $game)
 	{
+		$game->load('pokemon');
 		return new GameResource($game);
 
 	}

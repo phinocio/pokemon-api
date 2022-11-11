@@ -29,7 +29,13 @@ class DatabaseSeeder extends Seeder
 			ReleaseSeeder::class,
 			GamePlatformSeeder::class,
 			PokemonTableSeeder::class,
-			GamePokemonSeeder::class
+			GamePokemonSeeder::class,
+			RegionSeeder::class,
+			GameRegionSeeder::class,
+			LocationSeeder::class,
+			GameLocationSeeder::class,
+			EncounterTypeSeeder::class,
+			EncounterSeeder::class
         ]);
     }
 }

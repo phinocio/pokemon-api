@@ -22,6 +22,24 @@ class GamePokemonSeeder extends Seeder
 		);
 
 		DB::table('game_pokemon')->insert([
+			'game_id' => 2,
+			'pokemon_id' => 1
+		],
+		);
+
+		DB::table('game_pokemon')->insert([
+			'game_id' => 3,
+			'pokemon_id' => 1
+		],
+		);
+
+		DB::table('game_pokemon')->insert([
+			'game_id' => 4,
+			'pokemon_id' => 1
+		],
+		);
+
+		DB::table('game_pokemon')->insert([
 			'game_id' => 1,
 			'pokemon_id' => 2
 		],

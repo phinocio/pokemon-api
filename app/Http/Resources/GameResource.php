@@ -18,10 +18,13 @@ class GameResource extends JsonResource
 	{
         return [
 			'name' => $this->name,
-			'releases' => ReleaseResource::collection($this->whenLoaded('releases')),
 			'generation' => new GenerationResource($this->whenLoaded('generation')),
-			'countries' => $this->whenLoaded('countries'),
+			'regions' => RegionResource::collection($this->whenLoaded('regions')),
+			'pokemon' => PokemonResource::collection($this->whenLoaded('pokemon')),
 			'platforms' => PlatformResource::collection($this->whenLoaded('platforms')),
+			'releases' => ReleaseResource::collection($this->whenLoaded('releases')),
+			'countries' => $this->whenLoaded('countries'),
+			'encounters' => EncounterResource::collection($this->whenLoaded('encounters')),
 			'links' => [
 				'self' => config('app.url') . "/games/$this->id",
 			]

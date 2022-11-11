@@ -24,4 +24,16 @@ class Game extends Model
 	public function pokemon() {
 		return $this->belongsToMany(Pokemon::class);
 	}
+
+	public function regions() {
+		return $this->belongsToMany(Region::class);
+	}
+
+	public function locations() {
+		return $this->belongsToMany(Location::class);
+	}
+
+	public function encounters() {
+		return $this->hasMany(Encounter::class);
+	}
 }

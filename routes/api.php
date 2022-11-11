@@ -4,6 +4,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\GenerationController;
 use App\Http\Controllers\PlatformController;
 use App\Http\Controllers\PokemonController;
+use App\Http\Controllers\RegionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,6 @@ Route::get('/platforms', [PlatformController::class, 'index']);
 Route::get('/platforms/{platform}', [PlatformController::class, 'show']);
 
 Route::get('/pokemon', [PokemonController::class, 'index']);
+Route::get('/pokemon/{pokemon}', [PokemonController::class, 'show']);
+
+Route::get('/regions', [RegionController::class, 'index']);
